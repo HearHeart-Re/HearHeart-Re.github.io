@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>第四轮（未完） | 暂定待改</title>
+    <meta name="author" content="QY" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.png" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>暂定待改</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;暂定待改</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>第四轮（未完）</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/22
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="1"><a href="#1" class="headerlink" title="&#x2F;1"></a>&#x2F;1</h3><p>幕间:和奏的短篇•其一<br>一篇游记，简短而细致地记录了北欧某国家的风土人情，有明显的模仿托卡尔丘克的痕迹，很难想象作者其实没出过国。</p>
+<p>Round.1 穿越生活的幻象</p>
+<p>厚重的云层肆意伸展着，像不可名状的巨物逐渐逼近。<br>“Tekeli-Li！”“Tekeli-Li！”窗外的鸟不安分地叫着，扰乱了秦音本就稍显焦躁的心绪。<br>空旷的社团大楼楼道里只有秦音一个人。<br>“这又是什么核啊？”<br>小声的自言自语在不远处激起涟漪，黑暗中有一处影子在晃动。<br>“前面那位朋友，找到你了哦？”<br>话音未落，一片校服便以诡异的初速度飘了起来，向着远处离去。<br>但很明显，过于宽松的衣服不适合跑步，至少比水手服更不适合。<br>校服魔人(暂定)见自己有被追上的风险，发挥社团大楼复杂的地形优势，几个变向后消失在秦音的视野当中。<br>——随后就被秦音堵在楼上一间活动室里。<br>“我不会说这里没有你的退路，但这是事实。”秦音站在门口，掏出一个小记事本，继续问道，“那么，忍野同学，你于两周前借出敝社的收藏品能否归还了呢？”<br>黑暗中只能看到校服魔人晃动着的袖子的轮廓。<br>“混蛋社长！我就知道她肯定没说清楚。”<br>袖子晃动伴随着衣物摩擦的细小声音。<br>“不不不，问题不在这里，这些都是我个人的物品，是放在戏剧社而已，是这样。”<br>“哪怕你要走另外的流程，我也不会借的哦？实现愿望又是什么啊喂！”<br>“不是，这种东西不管怎么说都很离谱好吧，朋友？你这话说的就跟庞氏骗局一样了。”<br>“一开始就这样不就好了吗？啊，好的，感谢你的配合。”<br>秦音从校服魔人身上拾取到了道具，【遗失的收藏品】！<br>“是吗？原来是这样啊，那是我的理解有误，对不起。不过嘛，你也确实应该找社长，她确实是那种喜欢看这种事情的人。”<br>“你问我的看法？我向来是不理会生活的幻象，直接穿过去的。对，不吃这套，谢谢。”<br>“那么最后，其实还有一件事——”秦音收起记事本，向忍野走去，揪住了他命运的后颈，“你最近的行为给和奏社长带来了很大困扰啊。根据社长的指示，现在你有一个机会，继续造成你如梦似幻的集体叙事……”</p>
+<p>两人的脚步声渐行渐远，待这层楼又恢复寂静时，刚刚两人所处的房间内突然亮起了灯。<br>“我的回合！チェックメイト(checkmate)！”<br>“你下歪了啊！不算，这盘不算！”<br>“是谁耍赖要下盲棋啊？”</p>
+<p>幕间:秦音的中篇<br>与作者之前的风格不同，一篇用战记视角完成的社会派推理科幻。能够感受他人之痛却情感淡漠的人造人少女被卷入一场夹杂着世代仇恨与经济纷争的连环杀人案。</p>
+<p>Round.2 苍青的天空彼方（青い空の彼方）</p>
+<p>现在和奏的心情有点不好——老实说，是很不好。<br>虽然几位社员都到齐了（到齐了吗？），但是吧，居然还有人处于大纲阶段——绝对没有说某位马忽悠社员。<br>有新社员愿意加入是好事，但是学生会到现在都没有通过入部申请的报告，虽然说是不影响活动的正常进行，但是，这种事情，就是会让人很烦。<br>还有秦音也迟到了，一下课就没看到她人，到现在已经半个多小时了，总不能说——</p>
+<p>“打扰了，不过各位应该还没进入状态吧，那就好。”连一刻也没有为失去放学时间自由的忍野感到悲伤，立刻进入文艺社活动室的正是秦音，以及她揪着的忍野。<br>“欸，诶？嗯。”“好长的猫……”<br>真名解放了的校服魔人抱着猫镇定自若地走进社室，自顾自地坐在真冬身旁，丝毫不觉得自己的所作所为给青山和桑带来了巨量的‘忍野现实震撼(NINYA REALITY SHOCK)’。<br>“那个，秦音同学，这位是……？”和奏犹豫着问道。<br>“这位同学自愿参加文艺社活动。”见和奏不信，秦音又补充了一句，“真的，比长崎素世自愿演奏《春日影》还真。”<br>和奏倒也不是不信，只是觉得事发突然，回头看见这位人快埋在校服里的同学已经找出纸笔开始写作了，先不说质量如何，从积极性和执行力上来看已经比一些社员强了（2&#x2F;1）。</p>
+<p>“话说，角落里是谁的行李？”秦音边掏出本子写写画画，边问道。<br>“啊，是我的。”Ciel举起了手。<br>“为什么带行李过来？”<br>“不是说要集训吗？”<br>“有这回事吗？”<br>“和奏没跟你说吗？”<br>“没有听说过。”<br>“我们也不知道这件事。”桑和青山还有真冬对视一眼。<br>“我没和你们说吗？”和奏对此感到惊讶，不过很快就想起来了，“对喔，今天午休没有集合，我都忘记这回事了，不过我申请了好几天的集训，你们明天再带也——”</p>
+<p>第二次，和奏又被突如其来的开门声打断了。<br>“请问哪位是和奏社长？我来转达学生会长的通知，社团活动室的课后使用不能超过十点，还请提前结束活动并检查电器是否全部关闭。”<br>“啊，好。等等，我申请的明明是集训活动以及校内过夜的许可？”<br>“由于最近学校活动较多，在组织安排上比较忙碌，暂时不能通过任何过夜的许可。”<br>“但是你们不是已经发回了批准的通知吗？”<br>“虽然我不是负责文书处理的工作，但那个应该是修改内容为课后活动并批准的通知，一般来说如果对这样的处理结果有异议可以于收到通知当天下午五点四十分前到学生会办公室讨论。”这位负责通知的学生会干部看了下表，“很遗憾，现在是五点四十一，学生会不会再处理任何这个时间提交的申请和报告，嗯，一般来说。”<br>“这个明显是你们这边的问题吧？”<br>“我并不这么觉得，学生会在通知上已经写了对于异议的处理方法，申请事务的流程也一直张贴在办公室外面，而学生会办公室就在你们楼上，就几步路的功夫。”<br>说罢，这位干部准备开门离开。<br>“等等，同学，等——”</p>
+<p>第三次，和奏又双叒被开门声打断了。<br>“请问哪位是和奏有希同学？你点的外卖到了……”<br>一位身材高挑的女性提着两袋外卖走进来，然后在和奏和学生会干部不善的目光下语气越来越弱。<br>“那个，我想着和大家第一次见面，正好又是这个时间，就想着带点吃的会不会大家有需要……之类的……”</p>
+<p>幕间:二人杂谈（二人しあわせ）<br>SD：DOMO,演劇Slayer＝san，生徒会长 desu.<br>EK：DOMO,生徒会长＝san，演劇Slayer desu.<br>SD：演劇Slayer＝san，你对本届文化节有什么意见么？<br>EK：不是，为什么要这么称呼我？<br>SD：《古事记》中记载，对待他人要用正式称呼。<br>EK：您高兴就好吧。<br>SD：那么，言归正传，榊原社长，你对本届文化节有什么看法吗？<br>EK：我可以不说吗？我还赶着去校长办公室有事呢。<br>SD：今年给你们留够一出三幕剧的时间。<br>EK：这个嘛，学生会对今年文化节有什么设想吗？<br>SD：有几个，但我想先听听你的意见。<br>EK：时间很赶，到现在也就一个半月时间准备，中间还有考试，所以还是老样子比较好吧。<br>SD：果然吗……<br>EK：不过今年是不是有几个新注册的社团，还有几个复部的社团，让他们展示成果如何？不要总是老牌社团来出成果嘛。<br>SD：很有道理。话说你是不是去文艺社帮忙吗，有什么评价吗？<br>EK：他们在组织社刊，还是挺好的。<br>SD：文艺社停止活动多久了？<br>EK：至少有两年了，社刊停办还要早一点，比赛拿不了奖那就更早了。</p>
+<p>Round.3 文艺创作其本质（Touch）</p>
+<p>真冬眨了眨眼，发觉刚刚进门的这位感觉……身高不如和奏，如果没人说的话，绝对会把她当成学生。<br>“我是文艺社的顾问老师，虞文虔。”<br>“原来你们文艺社是有顾问老师的啊？”x2<br>“原来我们社团是有顾问老师的啊？”x3<br>“我……忘记这回事了……”<br>无人在意的角落，学生会干部顺利下班了。<br>虞老师一边把外卖放到桌上，一边诉苦道:“开学快两个月了，一检都考了，还是没人通知我文艺社有活动，隔壁火箭研都出去参了两次赛！”<br>“话是这么说，但是我们之前确实是没有活动……”<br>“文虔姐，原来你是文艺社的顾问啊，我都差点以为你是学校招的茶水间管理员。”秦音坐下来，打开电脑。<br>“欸？小秦同学，你不是戏剧社的吗？”<br>不管虞老师疑惑的目光，秦音对和奏小声解释道:“开学时绮罗见到办公室里有个老师很闲，正好当时社里缺人写给新社员的戏剧鉴赏课的文案，然后她就把人找来了。现在有的社员都以为这是第二位顾问老师，虽然也有人以为是高三学姐就是了（更小声）”<br>虞文虔见秦音没理自己，气鼓鼓地转向另外几位不知道发生了什么的社员(？)，大声宣布道:“大家先来吃饭吧！虽然不知道学校门口的萨莉亚突然只有咖喱乌冬可以点了……”</p>
+<p>截止至周四晚六点三十分，真冬写完了自己应该要交的文章的初稿。</p>
+<p>幕间:赛后总结（Qin’s Note）<br>【好长的猫】，获得率0.29％：抓人时顺带抓住猫<br>【梗电商】，获得率23.57％：写作时使用致敬以达成目的<br>【南无三】，获得率11.63％：连续三次遭遇社交地狱时刻<br>【模因污染】，获得率0.01％：未出场且未被提及</p>
+<p>关于社刊的进度安排:<br>稿件:和奏（30＋），绮罗（37），秦音（11），青山（待修改，6），Ciel（待修改，11），桑（未完成，5），真冬（待修改，5），忍野（未完成，2），幽灵社员（？），还要至少三份稿件才差不多，或者让这几个人改稿时加点字数吧<br>插画:联系美术科学生，漫画社等，可以派真冬去跑腿</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 暂定待改
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;QY
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

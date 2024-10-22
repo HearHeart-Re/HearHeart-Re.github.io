@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>抽象接龙第一轮 | 暂定待改</title>
+    <meta name="author" content="QY" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.png" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>暂定待改</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;暂定待改</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>抽象接龙第一轮</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/22
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="天下•接龙道•大会，第三回——《四个人有各自的抽象》，简称《小抽象》"><a href="#天下•接龙道•大会，第三回——《四个人有各自的抽象》，简称《小抽象》" class="headerlink" title="天下•接龙道•大会，第三回——《四个人有各自的抽象》，简称《小抽象》"></a>天下•接龙道•大会，第三回——《四个人有各自的抽象》，简称《小抽象》</h1><h4 id="3rd-Day-no-Revue-Topic-Death-Crashing（狂飙突进／死亡冲刺）"><a href="#3rd-Day-no-Revue-Topic-Death-Crashing（狂飙突进／死亡冲刺）" class="headerlink" title="3rd Day no Revue Topic :Death Crashing（狂飙突进／死亡冲刺）"></a>3rd Day no Revue Topic :Death Crashing（狂飙突进／死亡冲刺）</h4><p>目前出场的角色:<br>Non-Player Character:<br>真冬，高一，性格温柔，不善拒绝别人的请求，做选择时总是犹豫不决，稍微有点不自信<br>和奏ユキ(Yuki)，高二，文艺社社长，重新组建了文艺社，平时个性平和，涉及社刊和文艺社存亡时比谁都容易激动，常识人吐槽役<br>Players:<br>（P1 不看战吧）榊原绮罗，高一，一般通行粉毛，戏剧社社长，在本篇中不会失心疯，说话喜欢引经据典，总是忙于社团事务，一般不出现在班内。在文艺创作一道上有自己的见解。<br>（P2 实名上网）忍野扇扇(宇宙大帝)，黑发，袖长过手，性别不明。怀中常抱一只丑花猫，实为其真身:来自遥远星球的宇宙大帝，不过其真实性有待考究，原来还有这事？<br>（P3 文化素质高）桑，披肩长卷发，偶尔高马尾，冷色调，微泛蓝，外表面呈灰到银的过渡色，内表面遮光而多呈灰黑色；回家社，不喜露面，闲事退散；外人多描述其为会乖乖听话的好孩子，不过鉴于教学楼对面树杈上插着的几只纸飞机都来自桑，倒也不能就此妄下定论。<br>（P4 后现代网络爬虫）Ciel，深蓝色短发，来自法国，混血儿，故交流无障碍，高三但莫名很有空，凭一己之力复活了茶道社（成员仅她一人），乐于助人，自称会去教堂做志愿者（虽然本人看起来并不怎么信教），因此若看到她穿着修女服出现在夜晚的街头，请勿惊讶。自称家里开面包店，但由于父母都在法国，所以大概是没机会去她家的店的。（备注:Ciel虽然是法国人，但莫名喜欢咖喱，可尝试用咖喱诱捕）<br>其他限制:<br>故事发展限定在学校范围内（可以用回家等理由跳过晚上发生的事，但是不能详细展开）<br>每轮每人写作字数限定在500～2000字左左右右<br>设定是帮助别人理解你的角色，而不是真正的角色介绍，可以包含不会在正文中出现的里设定用于帮助理解。<br>还请尽量原创角色，哪怕别人一眼看出你在neta谁。<br>#日常# #校园# #文艺创作# #接力# #集体创作# #求求你们看上文审题再动笔#</p>
+<h3 id="／1"><a href="#／1" class="headerlink" title="／1"></a>／1</h3><p>真冬一脸愁容地趴在桌子上。<br>“早上好，真冬冬。”不知何时刷新的同班同学跟自己打招呼。<br>“早上好，绮罗罗。”真冬回敬道，“今天有什么事吗？”<br>“我来的路上看到学校旁边那家书店进新刊了，放学后能陪我去看一下吗？”<br>          Manga  Time  Kirara<br>“哦——是《漫画时间绮罗罗》啊？”真冬依然趴在桌上，无精打采地问道。<br>“我觉得双关梗玩一次就够了哦？”<br>“谁让绮罗你总是这样叫我啊？”真冬换了个方向趴着，后脑勺对着绮罗。<br>话虽如此，虽然真冬更希望别人直接喊她名字而不是起昵称，但是她也只对绮罗这样，因为只有绮罗这样喊她。<br>“怎么了吗？一大早就这么没精神。”绮罗坐到真冬桌边，稍微带点关心的问道。<br>“你知道的嘛，我开学的时候加入了文艺社。”真冬犹豫着组织措辞。<br>“嗯，然后呢。”<br>“我之前说了这个社团只有五个人。”<br>“你说过了，而且都不是SOS团员。”<br>“那个不是重点，总之，社长决定出版社刊，昨晚通知我们每个社员一周内交稿。”<br>“所以说，你是在因为这个发愁吗？”绮罗站起身来，回到自己座位上。<br>“社长她说让我们每个人准备二十页的内容，可以请外援。”真冬坐起来，向绮罗投去期待的目光。<br>“你指望我吗？让我想想先。”绮罗开始思考。<br>“还请务必帮这个忙！我什么都愿意做的！”<br>“呜哇，好沉重……可以是可以，只是啊……”<br>“只是什么？”真冬的情绪被绮罗牵着走。<br>“你们社长昨天已经找过我了，我们之间就文化类社团的活动开展充分交换了意见，在友好愉快的氛围下达成了共识，并对今后的各项活动建立了一定的合作关系——这是我的稿子，十五页的戏剧评论，十页的剧团点评，还有十二页的戏剧音乐讨论，包括第一百零五届圣翔祭的观后感，对天狼星和银河座的采访，都是最近三个月的产出，我还没来得及发在博客上，干脆打了一份预览。既然和奏社长愿意给这个机会，我也顺势卖个人情。”<br>“欸，欸？”真冬接过了绮罗递来的厚厚一沓纸。<br>“还有，这三十七页是另外算的，还请你帮我转交一下，谢谢啦！”绮罗说话时，一只脚已经踏出教室门外，随着上课的铃声响起，她的身影消失在门后。<br>“滚蛋绮罗，这也太随心所欲了吧。”真冬重新趴到桌子上。<br>她知道，绮罗是故意这样做的。真冬并不是交不上稿，她只是缺少一份动笔的决心。<br>“不愧是戏剧社社长啊，绮罗罗，高一就当上社长可真是有本事啊。”真冬默默想着友人的所作所为，翻了翻绮罗的稿子，“三十七页也太吓人了吧？”<br>“所以说，我要写什么呢？”<br>在第一节的语文课上，真冬思考起了文艺创作的本质。</p>
+<h3 id="／2"><a href="#／2" class="headerlink" title="／2"></a>／2</h3><p>这个东西比较玄乎，真冬想着想着，竟无意识地转到“真冬今天吃什么”上面去。<br>时间却公平又谨慎，下课铃准时响起，而真冬还在犹豫到底是中午吃青椒还是晚上吃青椒好……一整个早上，真冬都在思绪飘流的状态下度过。回过神来，上午的最后一节课就快要结束了。<br>她叹了口气，保持用手托着下巴的姿势，眼睛瞟向窗外。<br>“噌噌噌”<br>不紧不慢的脚步声，在走廊上响起。<br>起初真冬以为是过路的老师，直到身后的门把悠悠地转动一定的角度。<br>教室后门悄悄打开，一个套着外套的人闪进来，然后正身快步走到真冬旁边的空座位坐下。这个过程发生得轻柔而又迅捷。那人坐在空空如也的课桌前，神态自然得好像本该如此。<br>被带进教室的风一瞬间流过真冬的后背，不过是混沌空气中的一个小小的扰动，一切恢复如常。<br>真冬总算反应过来，她一边从椅子上探起身，关上门，一边打量起这位不速之客……<br>眼前作认真听课状的少年，长着一张让元老院肃然起敬的精致脸庞；黑发细碎地洒在颈间额前，其长度正好处在难以籍此界定性别的区间；除去脖颈和脸庞，剩下的肌肤面积被大号女式校服外套和长裤所掩盖，连手都藏在长得有些离谱的袖子底下，但纤细的身材还是可以从坐态上看出来。<br>这是谁？真冬如实回答：“不知道。”<br>虽然穿着的外套属于本校没错，但真冬对这个人毫无印象，这不正常。换句话说，外貌模棱两可到特别的此人，怎么可能不在短时间内成为学校里的风云人物呢？特别是，连绮罗罗罗都没有提到过，有一个如此特殊的人……<br>于是，真冬先是惘然，然后有些紧张了。<br>既然不是如此，那便是可疑人物了吧。真冬这么想。<br>这时，少年扭头看向真冬，那模样让真冬的心里闪过一个词：机器人。<br>“噢，同学，你好，你是？”他（她？）说起话来细声细气，却也是比较中性的。<br>“啊，你好。”真冬礼貌地笑笑“你可以叫我真冬。”<br>“哦——真，冬。”少年点点头，“很冷呢。”<br>其实细看之下，少年的脸上根本就没什么表情，眼瞳也是深邃得有些吓人。不过，少年在说话与聆听的时候，嘴角会微微翘起，这多少也算有点显出人性，不，社会意识来。<br>而且，真的很精致啊……真冬在心底感叹。<br>“怎么？”<br>“哦，我说，确实很……不，没什么。有，有什么事吗？”<br>少年用右手的袖子挡住嘴，然后又悠然地放下，“没有，只是想问，你刚刚怎么没反应了呢。”<br>真冬有些吃惊：“没反应？怎么会，我一直听得很认真。”<br>盯……<br>“没事了，我还以为是没能量了呢。”<br>“哎，欸？”<br>“如果真的是那样的话，就麻烦了。”<br>“听上去……确实很麻烦。”原来是麻烦的人！<br>“如果是在我的星球上面的话”……<br>接下来的话语，虽然少年讲得很认真，但还是被真冬满怀歉意地略掉了全部。<br>“诶？”忽然，她有所发现，“这是……”<br>顺着她的示意，少年低下头，看向大腿处“哦，你说它吗？”<br>那里摆着一堆毛茸茸的东西，似乎是少年带进来的。<br>“只是一只猫而已啦。”少年两手随意地提起手中的毛皮。<br>“哦哦，原来是猫。”<br>“它睡着了。”少年微微晃了晃这条动物，没有反应，并没有苏醒。<br>“哦哦，原来睡着了。”<br>“可以这样。”少年让猫转了起来，而且越转越快。<br>“哦哦，原来能转。”<br>睡着了的猫一不留神就流到地板上了。<br>“哦哦，原来是流体。”<br>“哎呀，抱歉，我去拿拖把。”<br>“哦哦，原来要用拖把。”<br>少年站起身，好巧不巧，下课铃声轻快地响了起来。“马上回来！”少年的呼喊转头追上他没入人流的身影。<br>真冬枯坐依旧。<br>“想我了吗？”<br>真冬下意识回答：“谁问你了？”<br>一回头，是后仰并用肘部靠在门框上的粉发奇人。<br>“我自己问的。怎么样，一起走吧？”<br>真冬有些为难。可是我还要等……啊，<br>我还不知道他叫什么名字呢！<br>只是，少年一直未归，真冬心里也有些奇怪。<br>“那……好吧。呃，绮罗，你帮我个忙呗。”<br>“是什么呢？”绮罗看向真冬所指的方向。<br>“这里有一只猫，你帮我把它用拖把拖一下吧，先谢谢你了。”<br>“什么？”绮罗疑惑地说“你在说啥，这哪儿有猫？”<br>“欸？”</p>
+<h3 id="／3"><a href="#／3" class="headerlink" title="／3"></a>／3</h3><p>方才地上躺着猫的地方现在连根猫毛都不剩，真冬有些怀疑地揉了揉自己的眼睛，依旧只能看见光洁的地面。<br>‘’大概是已经蒸发到空气中了吧。’’真冬无奈地耸肩，对绮罗如此解释道。<br>‘’啊啊……又是一个猫痴……’’绮罗把刚放下的手又嵌回了门框，无力地扯了扯嘴角，目光瞥向积满人的走廊。<br>人流已经到了峰期，过道上堪堪挤出几滴尚有空余位置的砖。<br>真冬远远地看着人流，试图找出哪怕一个回转的身影。涝期已过，珊瑚礁探出水面，视线之内仍然没有任何一只拖把现身。<br>‘’也是，猫怕水呢……’’真冬稍作思索，最终决定如此说服自己。<br>‘’呵呵……’’一旁等待许久的绮罗有气无力地揣着气，脸上挂着早已预料到般的神色。<br>‘’所以我说，不如先去吃饭……’’<br>‘’跟上！’’<br>绮罗被毫不客气地打断。真冬已经一猛子扎进了砖里，奔向学生食堂。<br>‘’哇哇——‘’绮罗回过神来，急忙跟上真冬并入人流。<br>河流一路横冲直撞，在轭道撞碎几朵浪花，在平原上狂飙，在海口一跃而起，没入茫茫海洋。<br>进到海里又会做什么呢？大概会随着洋流一起周游世界各地吧。当然途中会有几亿几亿的水滴蒸腾而起，密密地挤在了对流层顶部。再然后呢？大概会在沙漠里跳踢踏舞，和铁锈藓类一起合力堵住水管，儒雅地端坐在宇宙大帝的肚子里，又或者说，和着番茄被制成了浓稠的茄汁，上呈到两脚兽的餐桌上。<br>真冬一边想着这些，一边悬起勺子，看着番茄汁在勺子底缓缓凝聚成滴。绮罗就在对面，大口吞入饭菜的胜状令人叹为观止，仿佛所有器官都用在了吃饭上。<br>勺底的茄汁聚的越来越慢，最后直接罢工般不负责任地停止了下坠的趋势。<br>‘’唉，’’真冬无可奈何地放下了勺子，’’青椒只能放到晚上了……’’<br>‘’哝嗦舍么？’’绮罗罗罗罗表示没听清。<br>————‘’你掉队了！’’小肠暴躁地把哨声吹得震天响，勒令大脑在吃饭时不要做别的事。————<br>‘’啊啊，没什么……’’真冬脑袋一歪，发问，’’你在学校里有认识一位长得像女孩子的男孩子吗？’’<br>‘’嗯？’’<br>————小肠开始了思考————<br>‘’或者是长得像男孩子的女孩子也未尝不可。’’真冬补充道。</p>
+<h3 id="4"><a href="#4" class="headerlink" title="&#x2F;4"></a>&#x2F;4</h3><p>“？？？怎么突然问这个？”<br>————小肠开始了咆哮————<br>“没什么，只是问下学校里有没有这号人物罢了。”<br>“喂，你该不会觉醒了什么奇怪的癖好吧。”<br>“？”<br>“没什么，还以为你更新了计算机XP系统。”<br>————小肠开始了悲鸣————<br>真冬决定暂时无视小肠的哀求，“你在想什么啊，怎么可能啊。”<br>绮罗默不作声，没有表示否定，这让真冬松了口气，毕竟让绮罗产生了什么奇怪的误会就不好玩了。但绮罗也没有表示认可，这让真冬有些不安。不过鉴于绮罗正吃得津津有味，真冬无法排除她只是单纯没空搭理自己的可能性……<br>等等，话题好像被带偏了。<br>“不对，先别讲那些有的没的，绮罗，所以你在学校里有认识这样的人吗？”<br>————小肠放弃了挣扎，怀着摆烂的心情看着大脑表演————<br>“嗯……”绮罗停下勺子歪头思索。<br>“认识？！”<br>“没听说过。”<br>“可恶啊，既然不知道就不要摆出一副 ‘想起来了’ 的表情啊！”<br>白高兴一场的真冬失去了吃饭的兴趣，大脑在小肠的凝视下操作身体离开了饭堂。<br>心里不快的 真冬Natural Intelligence 默默把「不要在绮罗吃饭时与她聊天」作为今天最重要的收获记在脑子，快步回到教室。<br>不过我们也不必为此担心，毕竟人类这一物种拥有着优越的预判能力与未雨绸缪的智慧，这具经历上万年进化之旅的身体早已为这一状况做好了准备，即使这一顿没怎么吃，也不会有什么大碍的。</p>
+<p>下午，<br>正常到无趣的下午，<br>尽管老师所讲的内容依旧是那么无聊，<br>对真冬来说却并非毫无收获与快乐，<br>当然，这并非因为真冬是个随遇而安的人，<br>而是因为她与历史老师课上提到的“人的优越之处在于他能认识到自己的不足”这句先贤话语产生了共鸣。<br>在这个下午，她及时认识到了自己的错误，及时将今天最重要的收获修正为<br>「饿饿饿饿饿饿饿饿饿饿饿，我要吃饭饭饭饭饭饭饭饭饭饭饭」<br>不过真冬现在没空想这个，她现在有更重要的事要做。</p>
+<p>最初的五改变了一切，<br>随后的四积蓄了无数，<br>承前的三展示了未来，<br>启后的二规划了道路，<br>而最终的一，早已失去了意义席位，</p>
+<p>如今的零，将通向幸福温饱。<br>————小肠摆出嘲弄的神情————<br>下课铃响起，真冬以迅雷不及掩耳盗铃儿响叮当之势冲出教室，势如破竹，势不可挡，宛如庐山瀑布，仿佛天上黄河，冲决而下，容不得阻碍，容不得羁绊，所谓一人成军便是如此吧。有诗赞曰：一骑绝尘冬子笑，无人知是晚餐来。</p>
+<p>“啊，活过来了！”大口嚼着茄子的真冬如是说。<br>不过，人类居安思危的优越本能使她意识到自己好像忘记了什么。<br>忘记了什么呢？不知道，反正和青椒无关就是了。</p>
+<p>不祥的预感靠近，真冬转头一看，发现和奏社长正在靠近，尽管吃着吃着突然换座位很抽象，但还是先远离吧。或许是因为将可能拖稿的羞愧吧，真冬现在没有面对和奏的勇气。<br>换到另一边的座位，然后<br>“哈喽，我能坐在这里吗？”<br>真冬抬头一看，映入眼帘的是深蓝色的短发，清秀的面庞让人感觉是学妹，但身上校服的款式却明白地显示出高三的身份。说起来，我认识这位学姐吗？真冬有些犹豫，不知道要不要拒绝。<br>“欸，你是真冬吧，是我啊，你不记得我了吗？我们之前还一起参加过公园里的志愿者活动。”<br>脑子里仿佛有一道光闪过，死去的回忆开始复苏。“是……Ciel学姐？”<br>学姐笑着点了点头，“好久不见了，真冬。”<br>“好久不见，学姐。”<br>说起来，这所学校里应该没有人会没听过Ciel学姐的名号吧，毕竟人美心善，不少同学都受过她的帮助。<br>真冬想请学姐帮忙交稿，又担心会打扰学姐，处于纠结中。<br>不过这纠结并未持续太久，随后的声音让真冬的纠结烟消云散。<br>“哈喽，雪儿Ciel学姐。”<br>“哈喽，雪yuki部长。”</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 暂定待改
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;QY
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
